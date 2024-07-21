@@ -1,4 +1,4 @@
-# 1. [Diameter of a tree] (https://leetcode.com/problems/diameter-of-binary-tree/description/) 
+# 1. [Diameter of a tree](https://leetcode.com/problems/diameter-of-binary-tree/description ).
 it is longest path between two node (u,v).
 
 # Algorithm for this
