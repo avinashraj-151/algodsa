@@ -72,3 +72,33 @@ public:
     }
 };
 ```
+# center of a tree
+All dimeter having same center.center can't be more than 2
+ALL dimeter passes through all center.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
