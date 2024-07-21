@@ -76,6 +76,68 @@ public:
 All dimeter having same center.center can't be more than 2
 ALL dimeter passes through all center.
 
+# approach 
+ 1. we need to find the diameter of tree (we solve earlier)
+ 2. find the path between to need and find the mid of path if odd then one center node if even then 2 center.
+
+Not exact similar but their is similar question [ find the path between the two node ]( https://leetcode.com/problems/step-by-step-directions-from-a-binary-tree-node-to-another)
+
+# code for above problem 
+```
+class Solution {
+    //need to find the parent 
+    vector<TreeNode*>par;
+    string ans;
+    TreeNode*y=nullptr;
+public:
+    void parent(TreeNode*root,TreeNode*previous,int startvalue){
+        if(!root)return;
+        if(startvalue==root->val)y=root;
+        par[root->val]=previous;
+        parent(root->right,root,startvalue);
+        parent(root->left,root,startvalue);
+    }
+    int dfs(TreeNode*root,TreeNode*previous,int destvalue){
+        if(!root)return 0;
+        if(root->val == destvalue)return 1;
+        if(previous!=par[root->val] && par[root->val]!=nullptr){
+            ans.push_back('U'); 
+            if(!dfs(par[root->val],root,destvalue)){
+                ans.pop_back();
+            }else{
+                return 1;
+            }
+        }
+         if(previous!=root->right){
+              ans.push_back('R');
+            if(!dfs(root->right,root,destvalue)){
+            
+                ans.pop_back();
+            }else{
+                return 1;
+            }
+        }
+        if(previous!=root->left){
+            ans.push_back('L');
+            if(!dfs(root->left,root,destvalue)){
+                ans.pop_back();
+            }else{
+                return 1;
+            }
+
+        }
+        return 0;
+    }
+    string getDirections(TreeNode* root, int startValue, int destValue) {
+        par.resize(1000001, nullptr); 
+        parent(root,nullptr,startValue);
+        dfs(y,nullptr,destValue);
+        return ans;
+    }
+};
+```
+
+
 
 
 
