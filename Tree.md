@@ -80,7 +80,7 @@ ALL dimeter passes through all center.
  1. we need to find the diameter of tree (we solve earlier)
  2. find the path between to need and find the mid of path if odd then one center node if even then 2 center.
 
-Not exact similar but their is similar question [ find the path between the two node ]( https://leetcode.com/problems/step-by-step-directions-from-a-binary-tree-node-to-another)
+Not exact similar but this is similar question [ find the path between the two node ]( https://leetcode.com/problems/step-by-step-directions-from-a-binary-tree-node-to-another)
 
 # code for above problem 
 ```
