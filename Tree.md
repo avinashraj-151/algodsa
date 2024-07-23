@@ -136,6 +136,10 @@ public:
     }
 };
 ```
+#centorid 
+Centroid means that if we select a node then all subtree is less than equal to n/2 .
+ 
+
 
 
 
